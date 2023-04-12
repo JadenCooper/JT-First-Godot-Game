@@ -1,0 +1,179 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Squad_test/Squad_Control.gd" type="Script" id=2]
+[ext_resource path="res://Squad_test/Unit_Control.gd" type="Script" id=3]
+[ext_resource path="res://Squad_test/Unit_KinematicBody.gd" type="Script" id=4]
+
+[sub_resource type="NavigationMesh" id=1]
+vertices = PoolVector3Array( -65.75, 0.5, -31.5, -73.5, 0.5, -31.5, -73.5, 0.5, -23.75, -73.5, 0.5, 23.5, -73.5, 0.5, 31.5, -65.75, 0.5, 31.5, -10.5, 0.5, -20.5, -10.5, 0.5, -31.5, -18.5, 0.5, -31.5, -18.5, 0.5, 31.5, -10.5, 0.5, 31.5, -10.5, 0.5, 20.5, -57.75, 0.5, -31.5, -65.75, 0.5, -31.5, -73.5, 0.5, -23.75, -73.5, 0.5, 15.75, -73.5, 0.5, 23.5, -65.75, 0.5, 31.5, -57.75, 0.5, 31.5, -8.25, 0.5, 9.25, -8.25, 0.5, -9.25, -10.5, 0.5, -9.5, -10.5, 0.5, 9.5, -42, 0.5, -31.5, -73.5, 0.5, -8, -73.5, 0.5, 0, -42, 0.5, 31.5, -10.5, 0.5, 9.5, -10.5, 0.5, -9.5, -10.5, 0.5, -20.5, -18.5, 0.5, -31.5, -26.25, 0.5, -31.5, -26.25, 0.5, 31.5, -18.5, 0.5, 31.5, -10.5, 0.5, 20.5, -57.75, 0.5, -31.5, -73.5, 0.5, -23.75, -73.5, 0.5, -15.75, -50, 0.5, -31.5, -50, 0.5, -31.5, -73.5, 0.5, -15.75, -73.5, 0.5, -8, -42, 0.5, -31.5, -10.5, 0.5, -20.5, -26.25, 0.5, -31.5, -34.25, 0.5, -31.5, -34.25, 0.5, 31.5, -26.25, 0.5, 31.5, -10.5, 0.5, 20.5, -73.5, 0.5, 0, -73.5, 0.5, 7.75, -50, 0.5, 31.5, -42, 0.5, 31.5, -73.5, 0.5, 15.75, -57.75, 0.5, 31.5, -50, 0.5, 31.5, -73.5, 0.5, 7.75, -10.5, 0.5, -9.5, -10.5, 0.5, -20.5, -34.25, 0.5, -31.5, -42, 0.5, -31.5, -34.25, 0.5, 31.5, -10.5, 0.5, 20.5, -10.5, 0.5, 9.5, -42, 0.5, 31.5, 73.5, 0.5, -23.75, 73.5, 0.5, -31.5, 65.5, 0.5, -31.5, 65.5, 0.5, 31.5, 73.5, 0.5, 31.5, 73.5, 0.5, 23.5, 10.5, 0.5, 20.5, 10.5, 0.5, 31.5, 18.25, 0.5, 31.5, 18.25, 0.5, -31.5, 10.5, 0.5, -31.5, 10.5, 0.5, -20.5, 73.5, 0.5, -23.75, 65.5, 0.5, -31.5, 57.75, 0.5, -31.5, 73.5, 0.5, -15.75, 57.75, 0.5, 31.5, 65.5, 0.5, 31.5, 73.5, 0.5, 23.5, 8.25, 0.5, -9.25, 8.25, 0.5, 9.25, 10.5, 0.5, 9.5, 10.5, 0.5, -9.5, 49.75, 0.5, 31.5, 73.5, 0.5, 15.75, 73.5, 0.5, 7.75, 42, 0.5, 31.5, 10.5, 0.5, 20.5, 18.25, 0.5, 31.5, 26.25, 0.5, 31.5, 26.25, 0.5, -31.5, 18.25, 0.5, -31.5, 10.5, 0.5, -20.5, 57.75, 0.5, 31.5, 73.5, 0.5, 23.5, 73.5, 0.5, 15.75, 49.75, 0.5, 31.5, 73.5, 0.5, -8, 49.75, 0.5, -31.5, 42, 0.5, -31.5, 73.5, 0.5, 0, 10.5, 0.5, 20.5, 26.25, 0.5, 31.5, 34, 0.5, 31.5, 34, 0.5, -31.5, 26.25, 0.5, -31.5, 10.5, 0.5, -20.5, 73.5, 0.5, -8, 73.5, 0.5, -15.75, 57.75, 0.5, -31.5, 49.75, 0.5, -31.5, 42, 0.5, 31.5, 73.5, 0.5, 7.75, 73.5, 0.5, 0, 42, 0.5, -31.5, 10.5, 0.5, -9.5, 10.5, 0.5, 9.5, 10.5, 0.5, 9.5, 10.5, 0.5, 20.5, 34, 0.5, 31.5, 42, 0.5, 31.5, 34, 0.5, -31.5, 10.5, 0.5, -20.5, 10.5, 0.5, -9.5, 42, 0.5, -31.5, 0, 0.5, 9.25, 8.25, 0.5, 9.25, 8.25, 0.5, -9.25, 0, 0.5, -9.25, 0, 0.5, -9.25, -8.25, 0.5, -9.25, -8.25, 0.5, 9.25, 0, 0.5, 9.25 )
+polygons = [ PoolIntArray( 2, 1, 0 ), PoolIntArray( 5, 4, 3 ), PoolIntArray( 8, 7, 6 ), PoolIntArray( 11, 10, 9 ), PoolIntArray( 14, 13, 12 ), PoolIntArray( 16, 15, 17 ), PoolIntArray( 17, 15, 18 ), PoolIntArray( 19, 22, 20 ), PoolIntArray( 20, 22, 21 ), PoolIntArray( 24, 23, 25 ), PoolIntArray( 25, 23, 28 ), PoolIntArray( 25, 28, 27 ), PoolIntArray( 25, 27, 26 ), PoolIntArray( 31, 30, 29 ), PoolIntArray( 34, 33, 32 ), PoolIntArray( 36, 35, 37 ), PoolIntArray( 37, 35, 38 ), PoolIntArray( 40, 39, 41 ), PoolIntArray( 41, 39, 42 ), PoolIntArray( 45, 44, 43 ), PoolIntArray( 48, 47, 46 ), PoolIntArray( 50, 49, 51 ), PoolIntArray( 51, 49, 52 ), PoolIntArray( 54, 53, 55 ), PoolIntArray( 55, 53, 56 ), PoolIntArray( 59, 58, 60 ), PoolIntArray( 60, 58, 57 ), PoolIntArray( 61, 64, 62 ), PoolIntArray( 62, 64, 63 ), PoolIntArray( 67, 66, 65 ), PoolIntArray( 70, 69, 68 ), PoolIntArray( 73, 72, 71 ), PoolIntArray( 76, 75, 74 ), PoolIntArray( 78, 77, 79 ), PoolIntArray( 79, 77, 80 ), PoolIntArray( 83, 82, 81 ), PoolIntArray( 84, 87, 85 ), PoolIntArray( 85, 87, 86 ), PoolIntArray( 89, 88, 90 ), PoolIntArray( 90, 88, 91 ), PoolIntArray( 94, 93, 92 ), PoolIntArray( 97, 96, 95 ), PoolIntArray( 99, 98, 100 ), PoolIntArray( 100, 98, 101 ), PoolIntArray( 103, 102, 104 ), PoolIntArray( 104, 102, 105 ), PoolIntArray( 108, 107, 106 ), PoolIntArray( 111, 110, 109 ), PoolIntArray( 113, 112, 114 ), PoolIntArray( 114, 112, 115 ), PoolIntArray( 117, 116, 118 ), PoolIntArray( 118, 116, 121 ), PoolIntArray( 118, 121, 120 ), PoolIntArray( 118, 120, 119 ), PoolIntArray( 124, 123, 125 ), PoolIntArray( 125, 123, 122 ), PoolIntArray( 126, 129, 127 ), PoolIntArray( 127, 129, 128 ), PoolIntArray( 133, 132, 130 ), PoolIntArray( 130, 132, 131 ), PoolIntArray( 137, 136, 134 ), PoolIntArray( 134, 136, 135 ) ]
+
+[sub_resource type="BoxShape" id=6]
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="CylinderShape" id=3]
+
+[sub_resource type="CylinderMesh" id=8]
+
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.101961, 0, 1, 1 )
+
+[sub_resource type="CylinderMesh" id=4]
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="CubeMesh" id=7]
+
+[node name="Commander_test3D" type="Spatial"]
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 60, 0 )
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="."]
+navmesh = SubResource( 1 )
+
+[node name="StaticBody1" type="StaticBody" parent="NavigationMeshInstance"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, -42, 0, 0 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/StaticBody1"]
+transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 16, 0, -1, 0 )
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance/StaticBody1"]
+transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 16, 0, -1, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody2" type="StaticBody" parent="NavigationMeshInstance"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 2, 42, 0, 0 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/StaticBody2"]
+transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 16, 0, -1, 0 )
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance/StaticBody2"]
+transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 16, 0, -1, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody3" type="StaticBody" parent="NavigationMeshInstance"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 0.6, 0, 0, 0 )
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape" parent="NavigationMeshInstance/StaticBody3"]
+transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 16, 0, -1, 0 )
+shape = SubResource( 6 )
+
+[node name="MeshInstance" type="MeshInstance" parent="NavigationMeshInstance/StaticBody3"]
+transform = Transform( 16, 0, 0, 0, 1, 0, 0, 0, 16, 0, -1, 0 )
+mesh = SubResource( 2 )
+skeleton = NodePath("../..")
+
+[node name="Squad" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 0, 3 )
+script = ExtResource( 2 )
+
+[node name="Commander" type="KinematicBody" parent="Squad"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5 )
+collision_layer = 2
+collision_mask = 2
+script = ExtResource( 4 )
+
+[node name="NavigationAgent" type="NavigationAgent" parent="Squad/Commander"]
+path_desired_distance = 3.0
+target_desired_distance = 2.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Squad/Commander"]
+transform = Transform( 3.6, 0, 0, 0, 1, 0, 0, 0, 2.88, 0, 0, 1.4 )
+shape = SubResource( 3 )
+
+[node name="Position1" type="Position3D" parent="Squad/Commander"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Squad/Commander/Position1"]
+transform = Transform( 0.5, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0.2, 0 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Position2" type="Position3D" parent="Squad/Commander"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Squad/Commander/Position2"]
+transform = Transform( 0.5, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0.2, 0 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Position3" type="Position3D" parent="Squad/Commander"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, -1, 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Squad/Commander/Position3"]
+transform = Transform( 0.5, 0, 0, 0, 0.2, 0, 0, 0, 0.5, 0, 0.2, 0 )
+mesh = SubResource( 8 )
+material/0 = SubResource( 9 )
+
+[node name="Unit_1" type="KinematicBody" parent="Squad"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Squad/Unit_1"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Squad/Unit_1"]
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Squad/Unit_1"]
+transform = Transform( 0.494975, 0, 0.494975, 0, 1, 0, -0.494975, 0, 0.494975, 0, 0, -0.7 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 5 )
+
+[node name="NavigationAgent" type="NavigationAgent" parent="Squad/Unit_1"]
+path_desired_distance = 3.0
+target_desired_distance = 2.0
+
+[node name="Unit_2" type="KinematicBody" parent="Squad"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1, 3 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Squad/Unit_2"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Squad/Unit_2"]
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Squad/Unit_2"]
+transform = Transform( 0.494975, 0, 0.494975, 0, 1, 0, -0.494975, 0, 0.494975, 0, 0, -0.7 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 5 )
+
+[node name="NavigationAgent" type="NavigationAgent" parent="Squad/Unit_2"]
+path_desired_distance = 3.0
+target_desired_distance = 2.0
+
+[node name="Unit_3" type="KinematicBody" parent="Squad"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 3 )
+script = ExtResource( 3 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Squad/Unit_3"]
+shape = SubResource( 3 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Squad/Unit_3"]
+mesh = SubResource( 4 )
+material/0 = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Squad/Unit_3"]
+transform = Transform( 0.494975, 0, 0.494975, 0, 1, 0, -0.494975, 0, 0.494975, 0, 0, -0.7 )
+mesh = SubResource( 7 )
+material/0 = SubResource( 5 )
+
+[node name="NavigationAgent" type="NavigationAgent" parent="Squad/Unit_3"]
+path_desired_distance = 3.0
+target_desired_distance = 2.0
